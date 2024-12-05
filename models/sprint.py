@@ -18,10 +18,10 @@ class sprint(models.Model):
 
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
+
         for sprint in self:
             #try:
             if isinstance(sprint.start_date, datetime.datetime) and sprint.duration > 0:
                 sprint.end_date = sprint.start_date + datetime.timedelta(days=sprint.duration)
             else:
                 sprint.end_date = sprint.start_date
-

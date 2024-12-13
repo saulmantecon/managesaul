@@ -11,7 +11,7 @@ class task(models.Model):
     end_date = fields.Datetime()
     is_paused = fields.Boolean(string='Pausa')
     code = fields.Char(string='code', compute='_compute_cod')
-    sprint_id = fields.Many2one(comodel_name = 'managesaul.sprint', string='Sprint',compute='_get_sprint')
+    sprint_id = fields.Many2one(comodel_name = 'managesaul.sprint', string='Sprint',compute='_get_sprint', store =True)
     technology_id = fields.Many2many(comodel_name="managesaul.technology",
                                     relation="task_technology",
                                     column1="task_id",

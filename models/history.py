@@ -10,3 +10,15 @@ class history(models.Model):
     description = fields.Char(string='Descripcion', readonly=False, required=True, help="Introduzca la descripcion")
     project_id = fields.Many2one(comodel_name='managesaul.project', string='project', ondelete='cascade')
     task_id = fields.One2many(comodel_name ='managesaul.task', inverse_name='history_id', string='task')
+    # Esto no funciona ------------------------------------------
+    used_technologies = fields.Many2many("managesaul.technology", compute = "_get_used_technologies")
+
+    def _get_used_technologies(self):
+        for history in self:
+            technologies = None  # Array para concatenar todas las tecnologías. Inicialmente no tiene valor
+            for task in history.task_id:  # Para cada una de las tareas de la historia
+                if not technologies:
+                    technologies = task.technologies
+                else:
+                    technologies = technologies + task.technologies
+            history.used_technologies = technologies  # Asignar las tecnologías a la historia

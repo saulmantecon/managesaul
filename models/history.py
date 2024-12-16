@@ -18,7 +18,7 @@ class history(models.Model):
             technologies = None  # Array para concatenar todas las tecnologías. Inicialmente no tiene valor
             for task in history.task_id:  # Para cada una de las tareas de la historia
                 if not technologies:
-                    technologies = task.technologies
+                    technologies = task.technology_id
                 else:
-                    technologies = technologies + task.technologies
+                    technologies = technologies + task.technology_id
             history.used_technologies = technologies  # Asignar las tecnologías a la historia

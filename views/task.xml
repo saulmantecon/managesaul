@@ -29,7 +29,6 @@
                             <field name="sprint_id"/>
                             <field name="technology_id"/>
                             <field name="history_id"/>
-                            <field name="project_id"/>
                         </group>
                     </sheet>
                 </form>

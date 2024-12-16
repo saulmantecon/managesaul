@@ -17,6 +17,7 @@ class task(models.Model):
                                     column1="task_id",
                                     column2="technology_id")
     history_id= fields.Many2one(comodel_name = 'managesaul.history', string='history', ondelete='cascade')
+   # project_id = fields.Many2one(comodel_name = 'managesaul.project', related='history.project', readonly=True)
 
     def _compute_cod(self):
         for task in self:

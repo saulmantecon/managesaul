@@ -28,7 +28,6 @@
                             <field name="project_id"/>
                         </group>
                     </sheet>
-
                 </form>
             </field>
         </record>

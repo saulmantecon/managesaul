@@ -9,7 +9,7 @@ class sprint(models.Model):
     _description = 'managesaul.sprint'
     name = fields.Char(string='Nombre', readonly=False, required=True, help="Introduzca el nombre")
     description = fields.Char(string='Descripcion', readonly=False, required=True, help="Introduzca la descripcion")
-    duration = fields.Integer()
+    duration = fields.Integer(default=15) #valor por defecto
     start_date = fields.Datetime()
     end_date = fields.Datetime(compute = "_get_end_date", store = True)
     is_paused = fields.Boolean(string='Pausa')
@@ -18,7 +18,6 @@ class sprint(models.Model):
 
     @api.depends('start_date', 'duration')
     def _get_end_date(self):
-
         for sprint in self:
             #try:
             if isinstance(sprint.start_date, datetime.datetime) and sprint.duration > 0:

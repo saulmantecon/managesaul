@@ -11,8 +11,6 @@
                 </tree>
             </field>
         </record>
-
-
         <record model="ir.ui.view" id="vista_managesaul_task_form">
             <field name="name">vista_managesaul_task_form</field>
             <field name="model">managesaul.task</field>
@@ -29,12 +27,13 @@
                             <field name="sprint_id"/>
                             <field name="technology_id"/>
                             <field name="history_id"/>
+                            <field name="project_id"/>
+                            <field name="definition_date"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-
         <!-- Plantilla action -->
         <record model="ir.actions.act_window" id="accion_managesaul_task_form">
             <field name="name">Listado de task</field>

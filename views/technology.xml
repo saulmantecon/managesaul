@@ -11,8 +11,6 @@
                 </tree>
             </field>
         </record>
-
-
         <record model="ir.ui.view" id="vista_managesaul_technology_form">
             <field name="name">vista_managesaul_technology_form</field>
             <field name="model">managesaul.technology</field>

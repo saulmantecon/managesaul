@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="manage.action_developer_window_prueba"> <!-- cambio el nombre para probar -->
+            <field name="name">manage developer window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Devs" id="manage.menu_1_devs_list" parent="managesaul_management"
+                  action="manage.action_developer_window"/>
+    </data>
+</odoo>

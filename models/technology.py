@@ -13,7 +13,3 @@ class technology(models.Model):
                                     relation="task_technology",
                                     column1="technology_id",
                                     column2="task_id")
-    developer_id = fields.Many2many("managesaul.developer",
-                                       relation="developer_technologies",
-                                       column1='technology_id',
-                                       column2='developer_id')

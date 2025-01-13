@@ -1,13 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record model="ir.actions.act_window" id="manage.action_developer_window_prueba"> <!-- cambio el nombre para probar -->
-            <field name="name">manage developer window</field>
+        <!-- Herencia de vista -->
+        <record model="ir.ui.view" id="manage_devs_partner_form">
+            <field name="name">Manage Devs Form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/> <!-- Herencia -->
+            <field name="arch" type="xml">
+                <xpath expr="//sheet" position="inside"> <!--esto no hace falta-->
+                    <group>
+                        <field name="technologies_id"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Acción -->
+        <record model="ir.actions.act_window" id="action_manage_devs">
+            <field name="name">Manage Developers</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem name="Devs" id="manage.menu_1_devs_list" parent="managesaul_management"
-                  action="manage.action_developer_window"/>
+        <!-- Menú -->
+        <menuitem name="Developers" id="menu_manage_devs" parent="managesaul_management" action="action_manage_devs"/>
     </data>
 </odoo>

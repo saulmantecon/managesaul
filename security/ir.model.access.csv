@@ -4,3 +4,4 @@ acces_managesaul_sprint,managesaul.sprint,model_managesaul_sprint,base.group_use
 acces_managesaul_project,managesaul.project,model_managesaul_project,base.group_user,1,1,1,1
 acces_managesaul_history,managesaul.history,model_managesaul_history,base.group_user,1,1,1,1
 acces_managesaul_technology,managesaul.technology,model_managesaul_technology,base.group_user,1,1,1,1
+acces_managesaul_favtech,managesaul.favtech,model_managesaul_favtech,base.group_user,1,1,1,1

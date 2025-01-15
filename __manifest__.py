@@ -32,7 +32,8 @@
         "views/project.xml",
         "views/history.xml",
         "views/technology.xml",
-        "views/developer.xml"
+        "views/developer.xml",
+        "views/favtech.xml"
     ],
     # only loaded in demonstration mode
     'demo': [

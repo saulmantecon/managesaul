@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vista_managesaul_favtech_tree">
+            <field name="name">vista_managesaul_favtech_tree</field>
+            <field name="model">managesaul.favtech</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="favtech_id"/>
+                    <field name="user"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="vista_managesaul_favtech_form">
+            <field name="name">vista_managesaul_favtech_form</field>
+            <field name="model">managesaul.favtech</field>
+            <field name="arch" type="xml">
+                <form string="formulario_favtech">
+                    <sheet>
+                        <group name="group_top">
+                            <field name="favtech_id"/>
+                            <field name="user"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Plantilla action -->
+        <record model="ir.actions.act_window" id="accion_managesaul_favtech_form">
+            <field name="name">Listado de tecnologías favoritas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">managesaul.favtech</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('user', '=', uid)]</field> <!-- Filtro por usuario actual -->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Tecnologías Favoritas
+                </p>
+                <p>Click <strong>'Crear'</strong> para añadir nuevos elementos
+                </p>
+            </field>
+        </record>
+
+        <!-- Top menu item -->
+        <!-- menu categories -->
+
+        <menuitem name="Tecnologías favoritas" id="managesaul_favtech" parent="managesaul_management"
+                  action="accion_managesaul_favtech_form"/>
+        <!-- actions -->
+    </data>
+</odoo>

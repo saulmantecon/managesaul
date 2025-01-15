@@ -7,4 +7,3 @@ Respecto al entorno de trabajo,el proyecto se ha desarrollado en un entorno conf
 La estructura del proyecto tiene modelos personalizados para tareas, proyectos, sprints y tecnologías, vistas diseñadas para interactuar con los datos a través de la interfaz de Odoo y seguridad definida mediante reglas de acceso (ir.model.access.csv).
 
 [Enlace al pdf de la memoria del proyecto managesaul](pdf/Mantecon_deCaso_Saul_proyectomanage_FINAL.pdf)
- 
